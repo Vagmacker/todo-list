@@ -41,12 +41,12 @@ function App() {
   }
 
   function deleteTaskById(taskId: string) {
-    const newTasks = tasks.filter((task) => task.id !== taskId);
+    const newTasks: ITask[] = tasks.filter((task) => task.id !== taskId);
     setTasksAndSave(newTasks);
   }
 
   function toggleTaskCompletedById(taskId: string) {
-    const newTasks = tasks.map((task) => {
+    const newTasks: ITask[] = tasks.map((task) => {
       if (task.id === taskId) {
         return {
           ...task,
